@@ -27,7 +27,7 @@ body{background:var(--off-white);color:var(--ink);font-family:'DM Sans',sans-ser
 
 /* noise grain */
 body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' result='noise'/%3E%3C/filter%3E%3Crect width='250' height='250' fill='%23000' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctave[...]
   opacity:.5;}
 
 /* ── NAV ── */
@@ -45,7 +45,7 @@ nav.lifted{box-shadow:0 2px 20px rgba(28,23,18,.07);}
 .nav-btn:hover{background:var(--ink);color:#fff;}
 
 /* ── HERO ── */
-#home{min-height:100vh;display:grid;grid-template-columns:1fr 460px;
+#home{min-height:100vh;display:grid;grid-template-columns:1fr;
   align-items:center;gap:56px;padding:100px 56px 80px;position:relative;overflow:hidden;}
 #home::before{content:'';position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(ellipse 55% 55% at 80% 40%,rgba(184,76,42,.07) 0%,transparent 70%),
@@ -98,7 +98,7 @@ nav.lifted{box-shadow:0 2px 20px rgba(28,23,18,.07);}
 /* hero right — 3d canvas */
 .hero-visual{position:relative;z-index:2;height:440px;border-radius:22px;overflow:hidden;
   background:var(--ink);box-shadow:0 28px 72px rgba(28,23,18,.18);
-  opacity:0;animation:fadeIn .9s .5s ease forwards;}
+  opacity:0;animation:fadeIn .9s .5s ease forwards;display:none;}
 .hero-visual canvas{width:100%!important;height:100%!important;display:block;}
 .visual-label{position:absolute;bottom:16px;left:0;right:0;text-align:center;
   font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;
@@ -350,23 +350,6 @@ footer{background:#111;padding:26px 56px;
       <a href="https://wa.me/918928466820" target="_blank" rel="noopener" class="btn-plain">WhatsApp me →</a>
     </div>
   </div>
-
-  <div class="hero-visual" id="heroVisual">
-    <canvas id="heroCanvas"></canvas>
-    <div class="visual-label">drag to rotate</div>
-    <div class="sticker sticker-a">
-      <div class="sticker-num">50+</div>
-      <div class="sticker-txt">Websites built</div>
-    </div>
-    <div class="sticker sticker-c">
-      <div class="sticker-num">5+</div>
-      <div class="sticker-txt">Years exp</div>
-    </div>
-    <div class="sticker sticker-b">
-      <div class="sticker-num">20+</div>
-      <div class="sticker-txt">Technologies</div>
-    </div>
-  </div>
 </section>
 
 <!-- TICKER -->
@@ -404,10 +387,10 @@ footer{background:#111;padding:26px 56px;
   <div class="about-grid">
     <div class="about-copy">
       <h2>A developer who actually <em>ships</em> things.</h2>
-      <p>I graduated with a B.Tech in Computer Science and went straight into building — real-time apps, full-stack platforms, mobile experiences on both iOS and Android. No long ramp-up. Just figuring things out and shipping them.</p>
-      <p>Over <strong>5+ years of hands-on experience</strong>, I've worked across wildly different environments: early-stage startups, tech firms, healthtech, even brand strategy. That range keeps me adaptable and curious.</p>
-      <p>I've built and launched <strong>50+ websites</strong> and worked across <strong>20+ technologies</strong>. Some of those projects were rough. Most taught me something. A few I'm genuinely proud of.</p>
-      <p>Outside of code I'm curious about systems, how teams work, and why some products just <em>feel</em> right. Currently based in <strong>Mumbai</strong> and always happy to have a conversation about tech, product, or ideas.</p>
+      <p>I graduated with a B.Tech in Computer Science and went straight into building — real-time apps, full-stack platforms, mobile experiences on both iOS and Android. No long ramp-up. Just [...]
+      <p>Over <strong>5+ years of hands-on experience</strong>, I've worked across wildly different environments: early-stage startups, tech firms, healthtech, even brand strategy. That range kee[...]
+      <p>I've built and launched <strong>50+ websites</strong> and worked across <strong>20+ technologies</strong>. Some of those projects were rough. Most taught me something. A few I'm genuinel[...]
+      <p>Outside of code I'm curious about systems, how teams work, and why some products just <em>feel</em> right. Currently based in <strong>Mumbai</strong> and always happy to have a conversat[...]
     </div>
     <div class="about-nums">
       <div class="num-card">
@@ -439,22 +422,22 @@ footer{background:#111;padding:26px 56px;
       <div class="build-card">
         <span class="build-icon">📱</span>
         <div class="build-title">Mobile Apps (iOS &amp; Android)</div>
-        <div class="build-desc">Real-time apps with live data, push notifications, offline modes. I've shipped on both platforms — and I care about how things feel in someone's hand, not just how they look.</div>
+        <div class="build-desc">Real-time apps with live data, push notifications, offline modes. I've shipped on both platforms — and I care about how things feel in someone's hand, not just h[...]
       </div>
       <div class="build-card">
         <span class="build-icon">🌐</span>
         <div class="build-title">Full Stack Web Products</div>
-        <div class="build-desc">50+ websites and platforms — from fast-moving startup MVPs to polished client-facing tools. I handle everything from the database schema to the pixel-perfect frontend.</div>
+        <div class="build-desc">50+ websites and platforms — from fast-moving startup MVPs to polished client-facing tools. I handle everything from the database schema to the pixel-perfect fro[...]
       </div>
       <div class="build-card">
         <span class="build-icon">⚙️</span>
         <div class="build-title">Backend Systems &amp; APIs</div>
-        <div class="build-desc">RESTful APIs, Java services, Node.js backends. I write the kind of backend code that's boring in the best way — reliable, readable, and doesn't surprise you at 2am.</div>
+        <div class="build-desc">RESTful APIs, Java services, Node.js backends. I write the kind of backend code that's boring in the best way — reliable, readable, and doesn't surprise you at 2[...]
       </div>
       <div class="build-card">
         <span class="build-icon">☁️</span>
         <div class="build-title">Cloud &amp; Infrastructure</div>
-        <div class="build-desc">AWS deployments, scalable architecture, database management across SQL, MongoDB, and Oracle. I think about systems holistically — not just "does it work" but "will it scale".</div>
+        <div class="build-desc">AWS deployments, scalable architecture, database management across SQL, MongoDB, and Oracle. I think about systems holistically — not just "does it work" but "wi[...]
       </div>
       <div class="build-card">
         <span class="build-icon">🔗</span>
@@ -484,7 +467,7 @@ footer{background:#111;padding:26px 56px;
             <span class="exp-badge b-rust">Full Stack Developer</span>
           </div>
           <div class="exp-role">Building real-time iOS &amp; Android applications</div>
-          <p class="exp-desc">Hands-on from day one. I architected and shipped real-time apps for iOS and Android — handling live data, push notifications, and making sure everything actually worked on both platforms under pressure.</p>
+          <p class="exp-desc">Hands-on from day one. I architected and shipped real-time apps for iOS and Android — handling live data, push notifications, and making sure everything actually w[...]
           <div class="exp-tags">
             <span class="exp-tag">Flutter</span><span class="exp-tag">Node.js</span><span class="exp-tag">iOS</span><span class="exp-tag">Android</span><span class="exp-tag">Real-time</span>
           </div>
@@ -498,7 +481,7 @@ footer{background:#111;padding:26px 56px;
             <span class="exp-badge b-ink">Software Engineer</span>
           </div>
           <div class="exp-role">Software engineering across client projects</div>
-          <p class="exp-desc">Worked as a core engineer across multiple client engagements. Focused on writing clean, maintainable code and being the kind of teammate people can rely on when a deadline is tight.</p>
+          <p class="exp-desc">Worked as a core engineer across multiple client engagements. Focused on writing clean, maintainable code and being the kind of teammate people can rely on when a de[...]
           <div class="exp-tags">
             <span class="exp-tag">React</span><span class="exp-tag">TypeScript</span><span class="exp-tag">REST APIs</span><span class="exp-tag">MongoDB</span>
           </div>
@@ -512,7 +495,7 @@ footer{background:#111;padding:26px 56px;
             <span class="exp-badge b-rust">Java Software Engineer</span>
           </div>
           <div class="exp-role">Enterprise Java development</div>
-          <p class="exp-desc">Deepened my backend engineering here — building solid Java services, RESTful APIs, and business logic that needed to be reliable under load. Good discipline for thinking about systems.</p>
+          <p class="exp-desc">Deepened my backend engineering here — building solid Java services, RESTful APIs, and business logic that needed to be reliable under load. Good discipline for th[...]
           <div class="exp-tags">
             <span class="exp-tag">Java</span><span class="exp-tag">Spring</span><span class="exp-tag">REST APIs</span><span class="exp-tag">Oracle SQL</span>
           </div>
@@ -526,7 +509,7 @@ footer{background:#111;padding:26px 56px;
             <span class="exp-badge b-sage">IT Specialist</span>
           </div>
           <div class="exp-role">IT operations in a healthtech environment</div>
-          <p class="exp-desc">Managed IT systems and infrastructure for a healthcare innovation company. Navigated the specific challenges of technology in healthcare — reliability, data sensitivity, compliance, and user support.</p>
+          <p class="exp-desc">Managed IT systems and infrastructure for a healthcare innovation company. Navigated the specific challenges of technology in healthcare — reliability, data sensit[...]
           <div class="exp-tags">
             <span class="exp-tag">Healthtech</span><span class="exp-tag">IT Infrastructure</span><span class="exp-tag">Systems</span>
           </div>
@@ -540,7 +523,7 @@ footer{background:#111;padding:26px 56px;
             <span class="exp-badge b-ink">Brand Manager</span>
           </div>
           <div class="exp-role">Where tech met brand strategy</div>
-          <p class="exp-desc">An unusual role for an engineer, but a genuinely useful one. I sat at the intersection of digital tools and brand thinking — which taught me how non-technical people experience products.</p>
+          <p class="exp-desc">An unusual role for an engineer, but a genuinely useful one. I sat at the intersection of digital tools and brand thinking — which taught me how non-technical peop[...]
           <div class="exp-tags">
             <span class="exp-tag">Brand Strategy</span><span class="exp-tag">Digital Tools</span><span class="exp-tag">Product Thinking</span>
           </div>
@@ -554,7 +537,7 @@ footer{background:#111;padding:26px 56px;
             <span class="exp-badge b-sage">Technical Operations</span>
           </div>
           <div class="exp-role">Supporting technical operations &amp; systems</div>
-          <p class="exp-desc">Helped ACCESCO Living with their technical operations — setting up workflows, aligning systems with business goals, and bridging the gap between what the business needs and what the tech can deliver.</p>
+          <p class="exp-desc">Helped ACCESCO Living with their technical operations — setting up workflows, aligning systems with business goals, and bridging the gap between what the business [...]
           <div class="exp-tags">
             <span class="exp-tag">Operations</span><span class="exp-tag">Workflow Automation</span><span class="exp-tag">Systems Alignment</span>
           </div>
@@ -689,11 +672,11 @@ footer{background:#111;padding:26px 56px;
     <div>
       <span class="c-eye">Say hello</span>
       <h2 class="c-h">Let's build something <em>together</em></h2>
-      <p class="c-bio">Whether it's a product idea, a role you think I'd be good for, or just a chat — I'm always happy to hear from people doing interesting things. Drop me a message or book a call. I read everything.</p>
+      <p class="c-bio">Whether it's a product idea, a role you think I'd be good for, or just a chat — I'm always happy to hear from people doing interesting things. Drop me a message or book a[...]
       <div class="c-row"><div class="c-icon">📍</div>Mumbai, Maharashtra, India</div>
       <div class="c-row"><div class="c-icon">📞</div><a href="tel:+919136310295">+91 91363 10295</a></div>
       <div class="c-row"><div class="c-icon">💬</div><a href="https://wa.me/918928466820" target="_blank" rel="noopener">WhatsApp: +91 89284 66820</a></div>
-      <div class="c-row"><div class="c-icon">💼</div><a href="https://www.linkedin.com/in/hrishikesh-mishra-9b5937235/" target="_blank" rel="noopener">linkedin.com/in/hrishikesh-mishra</a></div>
+      <div class="c-row"><div class="c-icon">💼</div><a href="https://www.linkedin.com/in/hrishikesh-mishra-9b5937235/" target="_blank" rel="noopener">linkedin.com/in/hrishikesh-mishra</a></div[...]
       <div class="c-row"><div class="c-icon">🎓</div>B.Tech — Computer Science Engineering</div>
       <div class="c-row"><div class="c-icon">📱</div>Full Stack + iOS Developer · 5+ yrs</div>
       <div class="c-row"><div class="c-icon">✉️</div>Open to the right opportunities</div>
@@ -726,90 +709,6 @@ footer{background:#111;padding:26px 56px;
 /* NAV */
 const nav = document.getElementById('mainnav');
 window.addEventListener('scroll', () => nav.classList.toggle('lifted', scrollY > 40));
-
-/* THREE.JS */
-(function () {
-  const canvas = document.getElementById('heroCanvas');
-  const wrap   = document.getElementById('heroVisual');
-  if (!canvas || !wrap) return;
-
-  const W = wrap.clientWidth, H = wrap.clientHeight;
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
-  renderer.setSize(W, H);
-
-  const scene  = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(55, W / H, 0.1, 100);
-  camera.position.set(0, 0, 5);
-
-  scene.add(new THREE.AmbientLight(0xfff5e6, 0.65));
-  const l1 = new THREE.PointLight(0xd96b47, 2.5, 18); l1.position.set(4, 3, 3); scene.add(l1);
-  const l2 = new THREE.PointLight(0x6fa898, 1.8, 14); l2.position.set(-3, -2, 2); scene.add(l2);
-  const l3 = new THREE.PointLight(0xfff0d0, 1.2, 12); l3.position.set(0, 4, -2); scene.add(l3);
-
-  const geo  = new THREE.IcosahedronGeometry(1.3, 2);
-  const mat  = new THREE.MeshStandardMaterial({ color: 0x2a1a10, metalness: 0.55, roughness: 0.3, emissive: 0x3d1a0a, emissiveIntensity: 0.25 });
-  const ball = new THREE.Mesh(geo, mat);
-  scene.add(ball);
-
-  const wire = new THREE.Mesh(new THREE.IcosahedronGeometry(1.32, 2),
-    new THREE.MeshBasicMaterial({ color: 0xb84c2a, wireframe: true, transparent: true, opacity: 0.12 }));
-  scene.add(wire);
-
-  function mkRing(r, tb, col, rx, rz) {
-    const m = new THREE.Mesh(new THREE.TorusGeometry(r, tb, 8, 64),
-      new THREE.MeshBasicMaterial({ color: col, transparent: true, opacity: 0.55 }));
-    m.rotation.x = rx; m.rotation.z = rz; return m;
-  }
-  const r1 = mkRing(2.0, 0.009, 0xb84c2a, Math.PI / 2, 0);
-  const r2 = mkRing(2.5, 0.007, 0x4a7c6f, Math.PI / 3.5, Math.PI / 5);
-  const r3 = mkRing(2.9, 0.005, 0xd4a56a, Math.PI / 6, Math.PI / 3);
-  scene.add(r1); scene.add(r2); scene.add(r3);
-
-  const dotGeo = new THREE.SphereGeometry(0.045, 10, 10);
-  const dcols  = [0xb84c2a, 0x4a7c6f, 0xd4a56a, 0x9e7a5a];
-  const dots   = new THREE.Group();
-  [[2.4,.6,0],[-2.2,.9,.4],[1.7,-1.6,.3],[-1.5,-1.7,-.3],[.6,2.4,.2],[-.4,2.1,-.5],[2.1,1.7,.3],[-1.9,1.4,.2]]
-    .forEach((p, i) => {
-      const d = new THREE.Mesh(dotGeo, new THREE.MeshStandardMaterial({
-        color: dcols[i%4], emissive: dcols[i%4], emissiveIntensity: .6, metalness:.8, roughness:.2 }));
-      d.position.set(...p); dots.add(d);
-    });
-  scene.add(dots);
-
-  const starPos = new Float32Array(300 * 3);
-  for (let i = 0; i < 300 * 3; i++) starPos[i] = (Math.random() - .5) * 18;
-  const starGeo = new THREE.BufferGeometry();
-  starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
-  scene.add(new THREE.Points(starGeo, new THREE.PointsMaterial({ color: 0xffe0c0, size: 0.025, transparent: true, opacity: .42 })));
-
-  let drag = false, lx = 0, ly = 0, rY = 0, rX = 0;
-  canvas.addEventListener('mousedown', e => { drag = true; lx = e.clientX; ly = e.clientY; });
-  window.addEventListener('mouseup', () => { drag = false; });
-  window.addEventListener('mousemove', e => {
-    if (!drag) return;
-    rY += (e.clientX - lx) * .012; rX += (e.clientY - ly) * .012;
-    lx = e.clientX; ly = e.clientY;
-  });
-
-  let t = 0;
-  (function loop() {
-    requestAnimationFrame(loop); t += .005;
-    ball.rotation.y += (rY - ball.rotation.y) * .06;
-    ball.rotation.x += (rX - ball.rotation.x) * .06;
-    wire.rotation.y = ball.rotation.y; wire.rotation.x = ball.rotation.x;
-    r1.rotation.z += .0045; r2.rotation.x += .003; r3.rotation.y += .002;
-    dots.rotation.y = t * .28;
-    l1.position.x = Math.sin(t) * 4.5; l1.position.z = Math.cos(t) * 4.5;
-    l2.position.x = Math.sin(t + Math.PI) * 3; l2.position.z = Math.cos(t + Math.PI) * 3;
-    renderer.render(scene, camera);
-  })();
-
-  window.addEventListener('resize', () => {
-    const nw = wrap.clientWidth, nh = wrap.clientHeight;
-    renderer.setSize(nw, nh); camera.aspect = nw / nh; camera.updateProjectionMatrix();
-  });
-})();
 
 /* SCROLL REVEAL */
 const io = new IntersectionObserver(entries => {
